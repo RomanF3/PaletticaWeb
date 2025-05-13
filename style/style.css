@@ -86,50 +86,34 @@ main {
 }
 
 .mobile-phone {
-    margin: auto;
-    margin-top: 10px;
-    padding: 10px 10px 30px;
+    position: relative;
     width: 310px;
     height: 600px;
-    box-shadow: 0 0 20px #e2e2e2;
-    border-radius: 30px;
-    background-color: #000;
-
-}
-
-.screen {
-    width: 100%;
-    height: 100%;
-    background: #f2f2f2;
-    border-radius: 30px;
-    overflow-y: hidden;
-    scrollbar-width: none;
-}
-
-.brove {
-    width: 120px;
-    height: 15px;
-    background: rgb(0, 0, 0);
-    position: absolute;
-    margin: 0 95px;
-    border-radius: 0 0 20px 20px;
-}
-
-.speaker {
-    width: 60px;
-    height: 5px;
-    background: #d2d2d2;
-    display: block;
     margin: auto;
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+.phone-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+}
+
+/* Overlaying the screen */
+.screen {
+    position: absolute;
+    top: 47px; /* adjust based on where the phone screen starts */
+    left: 48px; /* adjust based on screen margins in the image */
+    width: 220px;  /* adjust to fit screen */
+    height: 500px; /* adjust to fit screen */
+    background: #f2f2f2;
     border-radius: 20px;
+    overflow: hidden;
+    z-index: 2;
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
+/* Fade effect remains */
 .mySlides {
     display: none;
     width: 100%;
@@ -140,7 +124,12 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 30px;
+    border-radius: 20px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 .topic-row {
@@ -156,13 +145,11 @@ main {
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
     margin-bottom: 40px;
     padding: 20px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 .topic-row,
@@ -173,7 +160,6 @@ main {
 
 .topic-row-container{
     flex: 1;
-    padding: 20px;
 }
 
 .topic-row-container ul {
